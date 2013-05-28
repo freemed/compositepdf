@@ -10,12 +10,12 @@ PREREQUISITES
 -------------
 
  * JRE 1.5+
- * Maven2
+ * Gradle ( http://www.gradle.org )
 
 BUILDING
 --------
 
-`mvn package` will generate a jar file in `target/`.
+`gradle jar` will generate a jar file in `build/libs/`.
 
 USAGE
 -----

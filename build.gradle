@@ -1,0 +1,24 @@
+apply plugin: 'java'
+
+repositories {
+	mavenCentral()
+}
+
+
+jar {
+	from {
+		configurations.compile.collect {
+			it.isDirectory() ? it : zipTree(it)
+		}
+	}
+	manifest {
+		attributes 'Main-Class': 'org.freemedsoftware.util.CompositePdfForm'
+	}
+}
+
+dependencies {
+	compile group: 'commons-cli', name: 'commons-cli', version: '1.2'
+	compile group: 'org.simpleframework', name: 'simple-xml', version: '2.7'
+	compile group: 'com.itextpdf', name: 'itextpdf', version: '5.4.1'
+	testCompile group: 'junit', name: 'junit', version: '4.+'
+}
